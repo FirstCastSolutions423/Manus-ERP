@@ -367,6 +367,47 @@ export const appRouter = router({
       }),
   }),
 
+  // Notifications
+  notifications: router({
+    list: protectedProcedure
+      .input(z.object({ unreadOnly: z.boolean().optional() }).optional())
+      .query(async ({ ctx, input }) => {
+        return db.getUserNotifications(ctx.user.id, input?.unreadOnly);
+      }),
+    unreadCount: protectedProcedure.query(async ({ ctx }) => {
+      return db.getUnreadNotificationCount(ctx.user.id);
+    }),
+    create: protectedProcedure
+      .input(z.object({
+        title: z.string(),
+        message: z.string(),
+        type: z.enum(["info", "success", "warning", "error"]).optional(),
+        category: z.string().optional(),
+        relatedId: z.number().optional(),
+        actionUrl: z.string().optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        return db.createNotification({
+          userId: ctx.user.id,
+          ...input,
+        });
+      }),
+    markAsRead: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        return db.markNotificationAsRead(input.id, ctx.user.id);
+      }),
+    markAllAsRead: protectedProcedure
+      .mutation(async ({ ctx }) => {
+        return db.markAllNotificationsAsRead(ctx.user.id);
+      }),
+    delete: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        return db.deleteNotification(input.id, ctx.user.id);
+      }),
+  }),
+
   // Integrations
   integrations: router({
     list: protectedProcedure.query(async ({ ctx }) => {

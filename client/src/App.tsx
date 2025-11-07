@@ -14,6 +14,7 @@ import Tickets from "./pages/Tickets";
 import DataImports from "./pages/DataImports";
 import Integrations from "./pages/Integrations";
 import Analytics from "./pages/Analytics";
+import Notifications from "./pages/Notifications";
 
 function Router() {
   return (
@@ -28,6 +29,7 @@ function Router() {
       <Route path={"/data-imports"} component={DataImports} />
       <Route path={"/integrations"} component={Integrations} />
       <Route path={"/analytics"} component={Analytics} />
+      <Route path={"/notifications"} component={Notifications} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

@@ -226,3 +226,25 @@ export const dashboardWidgets = mysqlTable("dashboard_widgets", {
 
 export type DashboardWidget = typeof dashboardWidgets.$inferSelect;
 export type InsertDashboardWidget = typeof dashboardWidgets.$inferInsert;
+
+/**
+ * User notifications
+ */
+export const notifications = mysqlTable("notifications", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  title: varchar("title", { length: 500 }).notNull(),
+  message: text("message").notNull(),
+  type: mysqlEnum("type", ["info", "success", "warning", "error"]).default("info").notNull(),
+  category: varchar("category", { length: 100 }), // e.g., "task", "transaction", "ticket"
+  relatedId: int("relatedId"), // ID of related entity
+  isRead: boolean("isRead").default(false).notNull(),
+  actionUrl: text("actionUrl"), // Optional link to related page
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+}, (table) => ({
+  userIdx: index("user_idx").on(table.userId),
+  isReadIdx: index("is_read_idx").on(table.isRead),
+}));
+
+export type Notification = typeof notifications.$inferSelect;
+export type InsertNotification = typeof notifications.$inferInsert;
