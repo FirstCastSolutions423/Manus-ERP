@@ -98,3 +98,52 @@
 - [x] Implement real-time notification updates
 - [x] Add notification preferences
 - [x] Create notification badge in header
+
+## Inventory & Supply Chain Management (Dynamics-Inspired)
+- [x] Create products/items master database
+- [x] Implement stock locations and warehouses
+- [x] Build purchase order management
+- [x] Add stock movement tracking
+- [ ] Create low stock alerts system
+- [ ] Implement inventory valuation
+- [x] Add barcode/SKU support
+
+## CRM & Sales Pipeline (Dynamics-Inspired)
+- [x] Create leads management system
+- [x] Build opportunities/deals pipeline
+- [x] Implement contacts and accounts
+- [ ] Add sales activities tracking
+- [ ] Create quote generation
+- [ ] Build win/loss analysis
+
+## HR & Employee Management (Dynamics-Inspired)
+- [x] Create employee directory
+- [x] Implement attendance tracking
+- [x] Add leave management system
+- [ ] Build performance review module
+- [ ] Create onboarding checklists
+- [ ] Add employee document management
+
+## Project Management (Dynamics-Inspired)
+- [x] Create project tracking system
+- [x] Implement task assignments
+- [x] Add time logging functionality
+- [x] Build budget tracking
+- [ ] Create resource planning
+- [ ] Add project reports and analytics
+
+## Workflow Automation (Dynamics-Inspired)
+- [ ] Build approval workflow engine
+- [ ] Create multi-level approval chains
+- [ ] Implement automated notifications
+- [ ] Add business rules engine
+- [ ] Create escalation policies
+- [ ] Build audit trail system
+
+## Advanced Analytics (Dynamics-Inspired)
+- [ ] Implement predictive cash flow forecasting
+- [ ] Add customer payment predictions
+- [ ] Create churn risk analysis
+- [ ] Build sales forecasting
+- [ ] Add demand prediction
+- [ ] Implement financial risk assessment
