@@ -147,3 +147,9 @@
 - [ ] Build sales forecasting
 - [ ] Add demand prediction
 - [ ] Implement financial risk assessment
+
+## Bug Fixes & UI Improvements
+- [x] Fix login authentication issues
+- [x] Add dark mode toggle switch
+- [x] Test authentication flow
+- [x] Verify dark mode persistence

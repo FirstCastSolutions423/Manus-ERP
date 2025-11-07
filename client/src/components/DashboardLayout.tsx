@@ -21,22 +21,67 @@ import {
 } from "@/components/ui/sidebar";
 import { APP_LOGO, APP_TITLE, getLoginUrl } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
-import { LayoutDashboard, LogOut, PanelLeft, Users } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
 import { Button } from "./ui/button";
 import NotificationCenter from './NotificationCenter';
 
+import { 
+  LayoutDashboard, 
+  LogOut, 
+  PanelLeft, 
+  Users, 
+  Moon, 
+  Sun,
+  CheckSquare,
+  DollarSign,
+  FileText,
+  AlertCircle,
+  Upload,
+  Link as LinkIcon,
+  BarChart3,
+  Bell
+} from "lucide-react";
+
 const menuItems = [
-  { icon: LayoutDashboard, label: "Page 1", path: "/" },
-  { icon: Users, label: "Page 2", path: "/some-path" },
+  { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
+  { icon: CheckSquare, label: "Tasks", path: "/tasks" },
+  { icon: DollarSign, label: "Transactions", path: "/transactions" },
+  { icon: FileText, label: "Reports", path: "/reports" },
+  { icon: FileText, label: "Documents", path: "/documents" },
+  { icon: AlertCircle, label: "Tickets", path: "/tickets" },
+  { icon: Upload, label: "Data Imports", path: "/data-imports" },
+  { icon: LinkIcon, label: "Integrations", path: "/integrations" },
+  { icon: BarChart3, label: "Analytics", path: "/analytics" },
+  { icon: Bell, label: "Notifications", path: "/notifications" },
 ];
 
 const SIDEBAR_WIDTH_KEY = "sidebar-width";
 const DEFAULT_WIDTH = 280;
 const MIN_WIDTH = 200;
 const MAX_WIDTH = 480;
+
+function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+  
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={toggleTheme}
+      className="h-9 w-9"
+    >
+      {theme === "dark" ? (
+        <Sun className="h-4 w-4" />
+      ) : (
+        <Moon className="h-4 w-4" />
+      )}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  );
+}
 
 export default function DashboardLayout({
   children,
@@ -285,7 +330,10 @@ function DashboardLayoutContent({
                 </div>
               </div>
             </div>
-            <NotificationCenter />
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <NotificationCenter />
+            </div>
           </div>
         )}
         <main className="flex-1 p-4">{children}</main>
