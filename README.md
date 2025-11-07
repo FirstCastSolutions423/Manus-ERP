@@ -14,6 +14,13 @@ A unified enterprise system that consolidates operations, analytics, and communi
 - **Support Tickets** - Comprehensive issue tracking with priority and status management
 - **Notifications** - Custom notification system with real-time updates and unread badges
 
+### Microsoft Dynamics-Inspired Modules
+
+- **Inventory & Supply Chain** - Product catalog with SKU management, multi-warehouse inventory tracking, purchase orders, and stock movement history
+- **CRM & Sales Pipeline** - Lead management with AI scoring, opportunity tracking through sales stages, contact database, and deal forecasting
+- **HR & Employee Management** - Employee directory, attendance tracking, leave request workflows, and performance management
+- **Project Management** - Project tracking with budgets and timelines, task assignments, time logging, and resource planning
+
 ### Advanced Features
 
 - **AI-Powered OCR** - Extract text from images and analyze documents
@@ -22,6 +29,8 @@ A unified enterprise system that consolidates operations, analytics, and communi
 - **Data Import/Export** - Support for CSV, Excel, JSON, and XML formats
 - **Cloud Integrations** - Ready for OneDrive, Box, Email, and HubSpot connectors
 - **API & MCP** - RESTful API with Model Context Protocol integration
+- **Dark Mode** - Switchable light/dark theme with persistent preferences
+- **Role-Based Access** - Admin and user roles with appropriate permissions
 
 ## Tech Stack
 
@@ -121,6 +130,15 @@ The application uses tRPC for type-safe API calls. Key routers include:
 - `tickets` - Support ticket system
 - `notifications` - Notification management
 - `integrations` - External service integrations
+
+### New Modules (Database Schema Ready)
+
+- `inventory` - Product and warehouse management
+- `crm` - Leads, opportunities, and contacts
+- `hr` - Employee, attendance, and leave management
+- `projects` - Project and task tracking with time entries
+
+*Note: UI implementation for new modules coming soon*
 
 ## Development
 
