@@ -153,3 +153,20 @@
 - [x] Add dark mode toggle switch
 - [x] Test authentication flow
 - [x] Verify dark mode persistence
+
+## Zapier Integration
+- [x] Set up Zapier CLI project structure
+- [x] Implement OAuth2 authentication with PKCE
+- [x] Create webhook infrastructure in backend
+- [x] Implement webhook signature verification
+- [x] Build all triggers (12 total) with instant + polling
+- [x] Implement all actions (12 total) with idempotency
+- [x] Create all searches/finders (7 total)
+- [x] Add dynamic dropdowns for related entities
+- [x] Implement custom fields exposure
+- [x] Add line item support
+- [x] Implement file upload/download
+- [x] Create comprehensive test suite
+- [x] Write OpenAPI specification
+- [x] Create README and user guide
+- [ ] Build demo video/screenshots

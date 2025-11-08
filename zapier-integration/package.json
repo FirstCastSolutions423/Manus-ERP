@@ -1,0 +1,37 @@
+{
+  "name": "manus-erp-zapier",
+  "version": "1.0.0",
+  "description": "Zapier integration for Manus ERP - Connect your ERP with 6000+ apps",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "zapier:validate": "zapier validate",
+    "zapier:test": "zapier test",
+    "zapier:push": "npm run build && zapier push",
+    "zapier:promote": "zapier promote"
+  },
+  "keywords": ["zapier", "erp", "manus", "integration"],
+  "author": "Manus ERP",
+  "license": "MIT",
+  "dependencies": {
+    "zapier-platform-core": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.50.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.2.0",
+    "zapier-platform-cli": "^15.0.0"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  }
+}
