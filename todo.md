@@ -170,3 +170,9 @@
 - [x] Write OpenAPI specification
 - [x] Create README and user guide
 - [ ] Build demo video/screenshots
+
+## Critical Bug Fixes
+- [ ] Fix login authentication loop issue
+- [ ] Verify OAuth callback handling
+- [ ] Test session persistence
+- [ ] Ensure redirect after login works
